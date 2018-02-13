@@ -1,0 +1,26 @@
+{
+  "name": "server-creation",
+  "version": "1.0.0",
+  "description": "create servers in aws and digital ocean using nodejs",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ncsu.edu/ubhosle/HW1-P2"
+  },
+  "keywords": [
+    "aws",
+    "nodejs",
+    "digital",
+    "ocean"
+  ],
+  "author": "uddhav bhosle",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.193.0",
+    "needle": "^2.1.1",
+    "os": "^0.1.1"
+  }
+}
