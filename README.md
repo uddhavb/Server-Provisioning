@@ -27,9 +27,10 @@ Idempotency can be defined as the ability to carry out the same operation more t
  - Training users and employees to handle the inventories can take up company's resources. Also it may need expertize for the best results.   
  - Inventories may be very costly to maintain and manage, thus many small scale companies may find it difficult to have such inventories.   
  - Scalability is an issue with traditional inventories. Today's growing data supplies mean increasing the inventory sizes and hence in conventional systems, it might have many problems like cost, access etc.   
+ - Not automating the inventory management can mean that time needed to manage it is very high along with the resources needed. Also there is high chance of errors in non automated processes.   
     
 #### Describe two configuration models. What are disadvantages and advantages of each model?   
-1. The push model: Here one server has the configuration management software installed on it and it pushes the changes to all the agents. the agents act like slaves and have to align with the commands of the master server.   
+1. The push model: Here one server has the configuration management software installed on it and it pushes the changes to all the agents. the agents act like slaves and have to align with the commands of the master server.  
  - This model is easy to manage as we have just one server with the configuration management tools and all other hosts just carry out the commands sent.  
  - The state of the host may not be maintained as there is less enforcement. The host may change as per commands and hence drift away from its configuration even if it is not supposed to.  
  - The assets are managed centrally from a server and this may be a bottleneck as all the hosts are dependent on the server for configuration management.    
