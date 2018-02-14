@@ -22,11 +22,15 @@ Idempotency can be defined as the ability to carry out the same operation more t
   3.  In RESTful services POST not idempotent. For instance, repeated POST calls to users may create multiple users may create multiple users which is a different state eveytime. Also DELETE request may return different values when the item was deleted and when it was not found.  
       
 #### Describe several issues related to management of your inventory.     
- The issues related to inventory management are:   
+Inventory management is about capturing the basics—what assets are on hand, where they reside and who owns them. It’s about maintaining an accurate, up-to-date view of owned hardware and software assets, so that at any time you can see an “actual state” of the components that comprise your infrastructure.   
+The issues related to inventory management are:   
+- Inventory management needs a single process owner who can consider the needs and requirements from all stakeholders and assure accountability throughout the entire process.   
+- If processes are not well defined then inventory accuracy will not be maintained. We need to set policies on frequency of discovery scans and inventory processes.  
+- An inaccurate inventory of installed hardware and software in the baseline may cause many problems further on in the configuration management.  
+- The assets in the network are not static and hence managing the inventoryy is an imporatant task and improper management can lead to many problems in the working of the system and the configuration.   
+- The inventories must be deep and wide and cover all the possible asssets from software to hardware in all depth and width. Else the configuration of the system will not be well managed and many assets may not be useful and other problems.   
  - A centralized inventory may have problems of cost and complexity. In decentralized inventories the atomicity and duplicity of the data may be a challenge.    
  - Training users and employees to handle the inventories can take up company's resources. Also it may need expertize for the best results.   
- - Inventories may be very costly to maintain and manage, thus many small scale companies may find it difficult to have such inventories.   
- - Scalability is an issue with traditional inventories. Today's growing data supplies mean increasing the inventory sizes and hence in conventional systems, it might have many problems like cost, access etc.   
  - Not automating the inventory management can mean that time needed to manage it is very high along with the resources needed. Also there is high chance of errors in non automated processes.   
     
 #### Describe two configuration models. What are disadvantages and advantages of each model?   
