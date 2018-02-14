@@ -45,13 +45,13 @@ Disadvantages:
 - However this model is very complex as all the agents have their own configuration management. the server has to do much more work in managing the agents and the task is also very complex.  
    
 3. Long Transaction Model: Each change happens in a long-running transaction, starting with a configuration. Subtransactions are started for explorative work. Versions are not visible except when committing transactions. Transactions generate work spaces that are completely isolated.   
-Advantages:   
+Advantages: 
 - Long transactions represent workspaces and development paths. Concurrency control schemes like locking etc coordinate concurrent transactions.
 Disadvantages:   
 - Concurrency control limits change propagation in the repository. Hence changes may remain isolated and not be visible everywhere.  
 
 4. Change set model: A change set is a set of deltas relative to a baseline. A new configuration is selected by specifying a baseline and a change set to be applied.   
-Advantages:   
+Advantages: 
 - The changes in the system are always based on initial baseline configuration and hence errors and bugs are easy to spot and fix.  
 Disadvantages:   
 - Arbitrary combination of changes is not normally possible, because of change interaction.
@@ -61,3 +61,5 @@ Disadvantages:
 - Unauthorized changes can be catastrophic and lead to losses.   
 - Using continuous integration or build automation tools in place of configuration management. These tools are simply not equipped to provide ongoing operations support, visibility and coordination in Production that modern Configuration Management solutions provide.   
 - Traditional application deployment solutions are not meant to be infrastructure configuration management products. They can get you part of the way there, but you’ll need to script it all, which is not extensible and defeats the true purpose of a tool, and they simply put your application into the next environment.   
+- Server software flaws or misconfigurations may permit directory listing and directory traversal attacks. 
+- Unnecessary default, backup, or sample files, including scripts, applications, configuration files, and web pages may lead to taking up of excess resources and time.  
