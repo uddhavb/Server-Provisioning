@@ -1,9 +1,5 @@
-// Require the AWS SDK module
+
 var AWS = require('aws-sdk');
-// Include Credentials
-// var accessKeyId= process.env.AWS_ACCESS_KEY;
-// var secretAccessKey= process.env.AWS_SECRET_ACCESS_KEY;
-// console.log(accessKeyId + "---------\n" + secretAccessKey);
 var creds = new AWS.Credentials({
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
@@ -19,7 +15,6 @@ var params = {
   ImageId: 'ami-79873901',
   InstanceType: 't2.micro',
   KeyName: 'DevOps',
-  //GroupIDs: ['sg-60f35a1f'],
   MinCount: 1,
   MaxCount: 1
 };
@@ -62,9 +57,6 @@ setTimeout(function(){
   	Authorization: 'Bearer ' + config.token
   };
 
-  // Documentation for needle:
-  // https://github.com/tomas/needle
-
   var client =
   {
   	listIP: function(dropletId, onResponse )
@@ -80,9 +72,7 @@ setTimeout(function(){
   			"region":region,
   			"size":"512mb",
   			"image":imageName,
-  			// Id to ssh_key already associated with account.
   			"ssh_keys": [18319198],
-  			//"ssh_keys":null,
   			"backups":false,
   			"ipv6":false,
   			"user_data":null,

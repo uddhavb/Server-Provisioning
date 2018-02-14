@@ -10,9 +10,6 @@ var headers =
 	Authorization: 'Bearer ' + config.token
 };
 
-// Documentation for needle:
-// https://github.com/tomas/needle
-
 var client =
 {
 	listIP: function(dropletId, onResponse )
@@ -28,9 +25,7 @@ var client =
 			"region":region,
 			"size":"512mb",
 			"image":imageName,
-			// Id to ssh_key already associated with account.
 			"ssh_keys": [18319198],
-			//"ssh_keys":null,
 			"backups":false,
 			"ipv6":false,
 			"user_data":null,

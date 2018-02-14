@@ -1,9 +1,5 @@
 // Require the AWS SDK module
 var AWS = require('aws-sdk');
-// Include Credentials
-// var accessKeyId= process.env.AWS_ACCESS_KEY;
-// var secretAccessKey= process.env.AWS_SECRET_ACCESS_KEY;
-// console.log(accessKeyId + "---------\n" + secretAccessKey);
 var creds = new AWS.Credentials({
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
@@ -19,7 +15,6 @@ var params = {
   ImageId: 'ami-79873901',
   InstanceType: 't2.micro',
   KeyName: 'DevOps',
-  //GroupIDs: ['sg-60f35a1f'],
   MinCount: 1,
   MaxCount: 1
 };
@@ -30,7 +25,7 @@ ec2.runInstances(params, function(err, data) {
       return;
   }
 
-  var id = data.Instances[0].InstanceId; 
+  var id = data.Instances[0].InstanceId;
   console.log("instance created. id= ", id);
   var params_instance = {
       InstanceIds: [id]
