@@ -31,13 +31,30 @@ Idempotency can be defined as the ability to carry out the same operation more t
     
 #### Describe two configuration models. What are disadvantages and advantages of each model?   
 1. The push model: Here one server has the configuration management software installed on it and it pushes the changes to all the agents. the agents act like slaves and have to align with the commands of the master server.  
+Advantages: 
  - This model is easy to manage as we have just one server with the configuration management tools and all other hosts just carry out the commands sent.  
+Disadvantages: 
  - The state of the host may not be maintained as there is less enforcement. The host may change as per commands and hence drift away from its configuration even if it is not supposed to.  
  - The assets are managed centrally from a server and this may be a bottleneck as all the hosts are dependent on the server for configuration management.    
+    
 2. The pull model: Here the agents have their own configuration management tools along with the centralized server. The server pulls the states and configurations from the agents and tells them what to do accordingly.   
+Advantages: 
 - This method is better at ensuring that assets stay in sync with the configuration as the agents have their own configuration management tools and hence will not need be damaged by arbitrary changes made by a centralized server.  
+- Here the asset can register itself to the agent and does not require permission from the server. This means that the agent can check and register the asset without waiting for peemission from the server.   
+Disadvantages:   
 - However this model is very complex as all the agents have their own configuration management. the server has to do much more work in managing the agents and the task is also very complex.  
-- Here the asset can register itself to the agent and does not require permission from the server. This means that the agent can check and register the asset without waiting for peemission from the server.  
+   
+3. Long Transaction Model: Each change happens in a long-running transaction, starting with a configuration. Subtransactions are started for explorative work. Versions are not visible except when committing transactions. Transactions generate work spaces that are completely isolated.   
+Advantages:   
+- Long transactions represent workspaces and development paths. Concurrency control schemes like locking etc coordinate concurrent transactions.
+Disadvantages:   
+- Concurrency control limits change propagation in the repository. Hence changes may remain isolated and not be visible everywhere.  
+
+4. Change set model: A change set is a set of deltas relative to a baseline. A new configuration is selected by specifying a baseline and a change set to be applied.   
+Advantages:   
+- The changes in the system are always based on initial baseline configuration and hence errors and bugs are easy to spot and fix.  
+Disadvantages:   
+- Arbitrary combination of changes is not normally possible, because of change interaction.
     
 #### What are some of the consquences of not having proper configuration management?   
 - The configuration management needs to be well monitored. Any improper changes that may be left unmonitored may cause severe damages to functioning of systems and client services.   
